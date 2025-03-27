@@ -1,0 +1,48 @@
+---
+title: Dynamic report example
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, message=FALSE, warning=FALSE, error=FALSE)
+
+# Load your packages here
+library(tidyverse)
+```
+
+```{css}
+body {
+  padding: 50px;
+}
+```
+
+
+## Look at me, a header!
+
+And here I can write other Markdown :-)
+
+```{r}
+# data
+google_url <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vQxETGlB1yUHZHciSNrrifJatVr7HxZVK1f3TiXiVWt5cs8IHHBpk0XKxL-oN-8lMIzMmF_MNnoi0wT/pub?gid=1685715257&single=true&output=csv"
+
+survey_data <- read_csv(google_url)
+
+survey_data_renamed <- survey_data %>%
+  rename(prev_course = 2,
+         programming_confidence = 3,
+         parttime_job = 4,
+         partime_hours = 5,
+         pizza_pref = 6,
+         height_cm = 7,
+         adopt_pet = 8,
+         positive_thing = 9,
+         upi_example = 10)
+```
+
+
+```{r}
+# We can write more R code here!
+mean_pc <- survey_data_renamed$programming_confidence %>% mean()
+paste("Mean data for programming confidence was", mean_pc)
+
+```

@@ -1,0 +1,34 @@
+
+
+
+<pre class="css"><code>body {
+  padding: 50px;
+}</code></pre>
+<style type="text/css">
+body {
+padding: 50px;
+}
+</style>
+<div id="look-at-me-a-header" class="section level2">
+<h2>Look at me, a header!</h2>
+<p>And here I can write other Markdown :-)</p>
+<pre class="r"><code># data
+google_url &lt;- &quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vQxETGlB1yUHZHciSNrrifJatVr7HxZVK1f3TiXiVWt5cs8IHHBpk0XKxL-oN-8lMIzMmF_MNnoi0wT/pub?gid=1685715257&amp;single=true&amp;output=csv&quot;
+
+survey_data &lt;- read_csv(google_url)
+
+survey_data_renamed &lt;- survey_data %&gt;%
+  rename(prev_course = 2,
+         programming_confidence = 3,
+         parttime_job = 4,
+         partime_hours = 5,
+         pizza_pref = 6,
+         height_cm = 7,
+         adopt_pet = 8,
+         positive_thing = 9,
+         upi_example = 10)</code></pre>
+<pre class="r"><code># We can write more R code here!
+mean_pc &lt;- survey_data_renamed$programming_confidence %&gt;% mean()
+paste(&quot;Mean data for programming confidence was&quot;, mean_pc)</code></pre>
+<pre><code>## [1] &quot;Mean data for programming confidence was 3.28571428571429&quot;</code></pre>
+</div>

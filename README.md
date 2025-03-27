@@ -31,4 +31,5 @@ A meme that captures how I currently feel about my university studies is
 
 ```bash
 Rscript <filename.R>
+Rscript -e "rmarkdown::render('dynamic_report_example.Rmd')"
 ```
