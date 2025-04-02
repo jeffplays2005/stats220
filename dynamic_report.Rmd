@@ -1,0 +1,107 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+```
+
+```{css}
+p,h1,h2,h3,h4 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+h1, h2, h3 {
+  font-weight: bold;
+}
+
+pre {
+  margin: 1em;
+}
+code {
+  display: block;
+  border-radius: 0.2em;
+  padding: 0.5em;
+  background-color: grey;
+}
+```
+
+## How Relevant are your Shorts?
+This STATS 220 project has a strong focus on analysing and gathering data on how relevant your shorts are.
+
+How relevant consider the shorts that you double tapped (liked)?
+
+How relevant do you consider the shorts that you skipped?
+
+```{r}
+# Read the live data fetched from Google Forms
+csv_url <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vQQsnK3yQ3KQXql3aXCS0ujXL_eQYKC6LqyZg2mbyTNNn_jwdjkWKwaNJER7r0AOisfqaVQMQNXe0RD/pub?gid=415582428&single=true&output=csv"
+logged_data <- read_csv(csv_url)
+
+# # Rename the columns to make them more readable
+latest_data <- rename(logged_data,
+    shorts_watched=2,
+    session_length=3,
+    shorts_liked=4,
+    shorts_skipped=5,
+    most_shown_topic=6,
+    liked_shorts_relevancy=7,
+    skipped_shorts_relevancy=8
+)
+```
+
+```{r}
+# Generate some statistics
+average_shorts_watched <- mean(latest_data$shorts_watched)
+number_of_responses <- nrow(latest_data)
+maximum_session_length <- max(latest_data$session_length)
+minimum_session_length <- min(latest_data$session_length)
+```
+
+Here are some results based on the survey conducted:
+
+```{r}
+paste("The total number of individuals that completed the survey is:", number_of_responses)
+paste("The average number of shorts individuals watch are:", average_shorts_watched)
+paste("The maximum session time recorded was", maximum_session_length, "and the minimum session time recorded was", minimum_session_length)
+```
+
+## What's the most shown topic in your session?
+
+The chart below analyses the data gathered and observes the most shown topic of your shorts.
+
+```{r fig.width = 8, fig.height = 4}
+ggplot(latest_data) +
+    geom_bar(aes(x = most_shown_topic)) +
+    labs(title = "Most Shown Topics in Shorts", x = "Topic", y = "Count")
+```
+
+## How relevant are the shorts you liked?
+
+The plot below shows the relevancy of the shorts liked with a contrast to the relevancy rating given.
+
+```{r fig.width = 8, fig.height = 4}
+ggplot(latest_data) +
+    geom_bar(aes(x = shorts_liked, fill = liked_shorts_relevancy)) +
+    labs(title = "Relevance rating of liked shorts compared to number of shorts liked", x = "Relevance Rating", y = "Shorts liked")
+```
+
+## How relevant are the shorts you skipped?
+
+The plot below shows the relevancy of shorts skipped.
+
+```{r fig.width = 8, fig.height = 4}
+ggplot(latest_data) +
+    geom_bar(aes(x = skipped_shorts_relevancy, fill = shorts_skipped)) +
+    labs(title = "Relevance rating of skipped shorts compared to number of shorts skipped", x = "Relevance Rating", y = "Count")
+```
+
+```{r}
+pets <- c("cat", "dog", "turtle", "rabbit")
+best_pet <- pets[1]
+```
+
+The best pet to have is a `r best_pet` of course!
+
+![](https://c.tenor.com/-qBsG1HwR4oAAAAC/tenor.gif)
