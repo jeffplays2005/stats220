@@ -1,0 +1,75 @@
+---
+title: "Project 2"
+subtitle: "STATS 220 Semester One 2025"
+author: "Jeffery Ji"
+output:
+  html_document:
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+```
+
+```{css}
+html, body {
+  background: linear-gradient(to right, aliceblue, lightblue);
+}
+p,h1,h2,h3,h4 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+h1, h2, h3 {
+  font-weight: bold;
+}
+pre {
+  margin: 1em;
+}
+code {
+  display: block;
+  border-radius: 0.2em;
+  padding: 0.5em;
+  background-color: black;
+  color: white;
+  text-wrap: wrap;
+}
+```
+
+## Introduction
+
+This STATS 220 project focuses on gathering data and generating plots to analyse how targetted your shorts (e.g. Instagram Reels, YouTube Shorts, etc.) are. The data gathered is completely anonymous, and only takes responses on how long your social media sessions are, most shown topic, how many shorts are skipped or liked, and how relevant those skipped or liked shorts were. I found this topic very interesting as it would be very insightful to observe what you watch in each social media session, which most people are very interested in!
+
+A key guideline that I considered while creating this form was the relevancy of questions asked. An important concern while handling data nowadays is to think of data minimisation, reducing the questions and data gathered to fit exactly what your research purpose is. I considered this by reducing the unnecessary questions such as age, name, what year student, etc. The questions being asked are very precise and relevant to the topic, input validators also ensure that data being gathered are relevant. 
+
+The data gathered was exactly enough to correlate if there was any relation between relevancy of your shorts, with how someone skips or likes their shorts. I think this is great for raising awareness as to how much data is being stored by these major tech companies, perhaps these companies know more about what you have interest/don't have interest in more than your family!
+
+[Heres a link to the form](https://docs.google.com/forms/d/e/1FAIpQLSfiC05A28IFBhN2NZy0BE14hjgxu-cBqlwhYG7rqToR9shEQA/viewform)
+
+## Dynamic report
+
+Here is a [link to my dynamic report](https://jeffplays2005.github.io/stats220/)! 
+
+## Creativity
+
+I think one of the most creative things I've done in my project is using HTML and CSS that I learnt outside of this course. I've made improvements to the codeblocks in the dynamic report to make it easier to read and ensured that it works neatly in the page even when scaling. The whole page is essentially scalable dependent on how big your screen is(i've tried my best to make it work very well)! Theres also a very cool gradient background!
+
+I've also used GitHub version control quite nicely, using several commits and creating a nice folder structure to store all the different projects!
+
+I've also included two different plots, one that incorporates two different data fields that give more insightful information about the data gathered! 
+
+## Learning reflection
+
+I think a really important idea that I learnt in module 2 was about the guidelines that was taught in the lectures. They are so important and I hope that every data researcher or form out there would follow these guidelines to ensure that the data gathered is relevant and that there is a good communication of purpose. There are too many companies that store and gather so much data that is irrelevant and use them for other purposes than what they should be used for. 
+I'm also very happy we are learning some things about Git and GitHub pages. This was very fun and interesting to do, but I hope we can learn more about how Git works rather than using the built in features (such as learning the command line commands, etc.).
+
+I'm just curious about how else we can make other plots in R language. This project was fun quite limited to what we had learnt! I'd be very excited to learn more!
+
+## Appendix
+
+```{r file='exploration.R', eval=FALSE, echo=TRUE}
+
+```
+```{r file='dynamic_report.Rmd', eval=FALSE, echo=TRUE}
+
+```
