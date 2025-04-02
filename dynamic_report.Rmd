@@ -9,13 +9,18 @@ knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
 ```
 
 ```{css}
+html, body {
+  background: linear-gradient(to right, aliceblue, lightblue);
+}
 p,h1,h2,h3,h4 {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 h1, h2, h3 {
   font-weight: bold;
 }
-
+img {
+  max-width: 100% !important;
+}
 pre {
   margin: 1em;
 }
@@ -55,7 +60,8 @@ latest_data <- rename(logged_data,
 
 ```{r}
 # Generate some statistics
-average_shorts_watched <- mean(latest_data$shorts_watched)
+# Round the decimal places for more readability
+average_shorts_watched <- mean(latest_data$shorts_watched) %>% round()
 number_of_responses <- nrow(latest_data)
 maximum_session_length <- max(latest_data$session_length)
 minimum_session_length <- min(latest_data$session_length)
@@ -96,7 +102,7 @@ The plot below shows the relevancy of shorts skipped.
 ```{r fig.width = 8, fig.height = 4}
 ggplot(latest_data) +
     geom_bar(aes(x = skipped_shorts_relevancy, fill = shorts_skipped)) +
-    labs(title = "Relevance rating of skipped shorts compared to number of shorts skipped", x = "Relevance Rating", y = "Count")
+    labs(title = "Relevance rating of skipped shorts", x = "Relevance Rating", y = "Count")
 ```
 
 ```{r}
