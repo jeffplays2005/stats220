@@ -46,7 +46,7 @@ I tried quite a lot of methods to construct plot 3, where I'm comparing the most
 
 My [visual story](https://jeffplays2005.github.io/stats220/visual_data_story.html).
 
-My visual story demonstrates creativity based on the styling, and relevancy towards myself. My styling uses a lot of reds, purples and pinks, using a gradient in the general page was very creative. Especially when the colours match up with what Instagram uses, I think the gradient background, and plot theme colours fit very well in this scenario. The font is also changed to something that helps readability!
+My visual story demonstrates creativity based on the styling, and relevancy towards myself. My styling uses a lot of reds, purples and pinks, using a gradient in the general page was very creative. Especially when the colours match up with what Instagram uses, I think the gradient background, and plot theme colours fit very well in this scenario. The font is also changed to something that helps readability! Something that's also quite cool is the version control I've been commiting to in GitHub!
 
 My researched areas in my form are very relevant towards my wellbeing, understanding what my interests are, and also helps me recognise any changes over time. My visual plots also have meaning behind why they were chosen, giving a strong interest towards why I'm gathering this data.
 
