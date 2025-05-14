@@ -1,0 +1,63 @@
+---
+title: Project 4
+author: Jeffery Ji
+output: html_document
+---
+
+```{css echo=FALSE}
+html, body {
+  background: linear-gradient(to right, #e7e1ef, #c994c7);
+}
+p,h1,h2,h3,h4,ul {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+h1, h2, h3 {
+  font-weight: bold;
+}
+```
+
+## Introduction
+
+My focus of the data collection was purely targetted towards how targetted my shorts were, identify possible trends or differences within the data gathering time frame of before and after mid semester break.
+
+There were no changes to my Google Form as the questions were sufficient and were contentful enough for data manipulation and wrangling.
+
+I was solely responsible in answering the form throughout my data gathering timeframe. I wanted to study and look into the amount of time I spent on shorts, what topics were my shorts about, the number of shorts I liked / skipped, and how many shorts I watched overall.
+
+I focused on nearly all of the variables, with some graphs focusing on skipped shorts, and some shorts focusing on liked shorts. I thought it would be really good to show a contrast on the timestamps as well, to see if there are any identifiable trends between the two timeframes (before and after mid semester break). This could also potentially help me notice if there were any particular reasons as for why there were any changes in my response towards watching reels.
+
+I used 3 different plots:
+
+1. `geom_density`
+
+A density plot was used to show the distribution of viewing durations over time, it's a great representation of patterns that makes it easier to compare behaviors between `liked` and `skipped` shorts over time. It can also be good in displaying overlaps in the data.
+
+2. `geom_count`
+
+A count plot was ideal for seeing the frequency of combinations in categorical data, in particular was useful in identifying and quantifying (without having to be very precise) on what main topics of reels was shown in my research. It's particularly good because the exact numbers don't really matter, the point was to observe and identify any differences between categorical zones such as `Shorts Watched` and the `Most shown topic`
+
+3. `geom_bar`
+
+The bar plots was chosen to compare data such as session length, where I want to notice any difference when comparing two fields such as `negative` or `positive` relevance types, and is particularly useful when using `facet_wrap` to join plots, the ease of levelling the bars helps show contrast and shifts in behaviour while comparing binary fields such as mid semester break times, or `liked`/`skipped`.
+
+I tried quite a lot of methods to construct plot 3, where I'm comparing the most amount of data, this was where I compared session length vs the liked relevance by engagement type and mid semester period. There was heaps of variables going around, combining two `ggplot geom_bar` plots, using `facet_wrap`, and having to mutate the data. It was generally just hard to think about how I can construct these, but overall I'm quite happy with the result.
+
+## Visual data story
+
+My [visual story](https://jeffplays2005.github.io/stats220/visual_data_story.html).
+
+My visual story demonstrates creativity based on the styling, and relevancy towards myself. My styling uses a lot of reds, purples and pinks, using a gradient in the general page was very creative. Especially when the colours match up with what Instagram uses, I think the gradient background, and plot theme colours fit very well in this scenario. The font is also changed to something that helps readability!
+
+My researched areas in my form are very relevant towards my wellbeing, understanding what my interests are, and also helps me recognise any changes over time. My visual plots also have meaning behind why they were chosen, giving a strong interest towards why I'm gathering this data.
+
+## Learning reflection
+
+I've just learnt heaps on more advanced data wrangling and using more types of `ggplot`s which was what I wanted to learn in the reflection from project 2. I'm glad that I was able to learn all of the techniques learnt in STATS 220, especially that I can take a study upon myself, including making the form that gathered the data, wrangling with the data, and creating useful plots based on the data. The visual data story even gave me some insight and information throughout this journey!
+
+I'm just interested in using more APIs in the future, I think it would've been very interesting if we could have a 5th project where we use more APIs, data frames, and work around data that's based on this! It would also be very interesting if we can work with general image manipulation instead of just creating plots!
+
+## Appendix
+
+```{r file='data_visualisation.R', eval=FALSE, echo=TRUE}
+
+```
