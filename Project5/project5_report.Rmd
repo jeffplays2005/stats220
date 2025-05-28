@@ -28,9 +28,11 @@ I think it was responsible to scrape data from my high school's website as I had
 
 ## Visualisation
 
-The main purpose of my visualisation is to identify any trendss based on liquor store proximity vs the school funding amount (in millions NZD) and retention. I was quite curious as my school had quite a lot funding yet had a lot of school leavers before 17 years old. I wanted to see if there was any form of correlation between the funding and liquor store proximity. 
+The main purpose of my visualisation is to identify any trends based on liquor store proximity vs the school funding amount (in millions NZD) and retention. I was quite curious as my school had quite a lot funding yet had a lot of school leavers before 17 years old. I wanted to see if there was any form of correlation between the funding and liquor store proximity, also held in contrast between English and Pacific language taught schools. 
 
-As can be seen from the graph that the most funded school ~9 million had the least amount of liquor stores within a close proximity (~ 1-2), yet had ~150 leavers in total. Following the result, a school with a ~6 million in funding(a fairly average funding) had over 12 liquor stores but had a low leaver rate of about 30-40 students in otal. 
+The distribution between Pacific and English language taught schools look very similar although it would be good if there was more data towards Pacific language schools to identify any further trends. 
+
+As can be seen from the graph that the most funded school ~9 million had the least amount of liquor stores within a close proximity (~ 1-2), yet had ~150 leavers in total. Following the result, a school with a ~6 million in funding(a fairly average funding) had over 12 liquor stores but had a low leaver rate of about 30-40 students in total. 
 
 ![My visualisation image](./my_viz.png)
 
@@ -40,7 +42,7 @@ My colour theme is chosen with care, I specifically used a colour theme that mat
 
 I was also actually a high school leaver(prior to reaching 17 years old) in a sense where I finished high school a year earlier than normal (I entered uni at a discretionary application, where I didn't do NCEA level 3 due to exceptional grades in NCEA level 2). I wanted to to create another function to pull retention data as I was curious if liquor stores resulted in high school students leaving prior to them reaching 17 years old. 
 
-I also had to look into the R documentation on changing the colours, the default one has a very poor highlight of using different lightness which was very difficult to read. I looked into the [documentation](https://ggplot2.tidyverse.org/reference/scale_viridis.html) and found the `scale_color_viridis_c` option which seemed very useful in my case (showing a distinct colour difference in the graph, making it very easy to read now). 
+I also had to look into the R documentation on changing the colours, the default one has a very poor highlight of using different lightness which was very difficult to read. I looked into the [documentation](https://ggplot2.tidyverse.org/reference/scale_viridis.html) and found the `scale_color_viridis_c` option which seemed very useful in my case (showing a distinct colour difference in the graph especially with the dark grey background, making it very easy to read now). 
 
 My entire report also is based off from the school colours from my old high school! I also managed to inspect elements the school website to find the font that the website uses, to match a similar theme to the topic. 
 
