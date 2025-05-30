@@ -32,7 +32,7 @@ The main purpose of my visualisation is to identify any trends based on liquor s
 
 The distribution between Pacific and English language taught schools look very similar although it would be good if there was more data towards Pacific language schools to identify any further trends. 
 
-As can be seen from the graph that the most funded school ~9 million had the least amount of liquor stores within a close proximity (~ 1-2), yet had ~150 leavers in total. Following the result, a school with a ~6 million in funding(a fairly average funding) had over 12 liquor stores but had a low leaver rate of about 30-40 students in total. 
+As can be seen from the graph that the most funded school ~9 million had the least amount of liquor stores within a close proximity (~ 1-2), yet had ~130 leavers in total. Following the result, a school with a ~6 million in funding(a fairly average funding) had over 12 liquor stores but had a low leaver rate of about 30-40 students in total. 
 
 ![My visualisation image](./my_viz.png)
 

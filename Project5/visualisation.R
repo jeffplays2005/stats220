@@ -77,7 +77,7 @@ my_viz <- ggplot(joined_data, aes(x = num_liquor_stores,
     title = "Liquor Store Proximity vs Funding & Retention Between Languages Taught",
     x = "Number of Nearby Liquor Stores",
     y = "Operational Funding (in Millions NZD)",
-    color = "Left Before 17 (%)"
+    color = "Left Before 17 (Number of Students)"
   ) +
   my_theme
 
