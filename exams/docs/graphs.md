@@ -1,3 +1,7 @@
+## ggplot
+
+GG stands for grammar of graphics
+
 ## geom_count
 
 `geom_count` - points sized based on data collected
@@ -86,4 +90,10 @@ annotate("text", x = 50, y = 5, label = "Popularity vs Genre")
 
 ```R
 scale_fill_manual(values = c("#195370", "#d7edf7"))
+```
+
+- `guides()` to remove the legend
+
+```R
+guides(fill = "none")
 ```
