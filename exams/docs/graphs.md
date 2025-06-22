@@ -32,6 +32,81 @@ ggplot(ed_data) +
 
 ![](https://docnamic.online/stats220_S125/notes_4A_files/figure-html/unnamed-chunk-10-1.png)
 
+## geom_line
+
+```R
+file_names <- paste0("https://stat.auckland.ac.nz/~fergusson/stats220_S124/zoom_data/participants", 1 : 15,".csv")
+
+all_the_data <- map_df(file_names, read_csv)
+
+lecture_counts <- all_the_data %>%
+  group_by(date_lecture, private_name) %>%
+  summarise(total_duration_minutes = sum(duration_minutes)) %>%
+  count(date_lecture)
+
+lecture_counts %>%
+  ggplot() +
+  geom_line(aes(x = date_lecture,
+    y = n))
+```
+
+![](https://i.imgur.com/EWgECrk.png)
+
+## geom_bar
+
+```R
+ggplot(data = spotify_data) +
+  geom_bar(aes(x = mode_name))
+```
+
+![](https://i.imgur.com/XqP3jl5.png)
+
+## geom_col
+
+Graph 1:
+
+```R
+song_data <- fromJSON("https://stat.auckland.ac.nz/~fergusson/stats220_S124/data/lab4B.json")
+
+genre_data <- song_data %>%
+  mutate(main_genre = case_when(
+    str_detect(artist_genre, "rock") ~ "rock",
+    str_detect(artist_genre, "hip hop") ~ "hip hop",
+    str_detect(artist_genre, "country") ~ "country",
+    str_detect(artist_genre, "r&b") ~ "r&b",
+    str_detect(artist_genre, "pop") ~ "pop",
+    TRUE ~ "other"
+  ))
+
+genre_summarised <- genre_data %>%
+  count(main_genre)
+
+genre_summarised %>%
+  ggplot() +
+  geom_col(aes(x = main_genre,
+    y = n))
+```
+
+![](https://i.imgur.com/ompBmAI.png)
+
+Graph 2:
+
+```R
+students_per_recording %>%
+  ggplot(aes(x = num_students),
+    y = reorder(session_name, -lecture_num)) +
+  geom_col(aes(fill = num_students)) +
+  geom_text(aes(label = numbers),
+    position = position_nudge(x = 6)) +
+  labs(title = "Number of students watching each lecture recording",
+    x = "Number of students",
+    y = "Lecture name") +
+  guides(fill = "none") +
+  theme_minimal()
+```
+
+![](https://i.imgur.com/FWJwYe4.png)
+
 ## geom_boxplot
 
 ```R
@@ -54,7 +129,7 @@ genre_data %>%
     colour = main_genre))
 ```
 
-![](https://media.discordapp.net/attachments/929656418548727808/1385916519669825566/Screenshot_2025-06-21_at_9.37.17_PM.png?ex=6857ced7&is=68567d57&hm=29d7ed2a02f5f0efc9f06cb080276ca832e44a6f7ba17d65eb4f12d67fe4f3c8&=&quality=lossless)
+![](https://docnamic.online/stats220_S125/lab_4B_files/figure-html/unnamed-chunk-17-1.png)
 
 ## geom_histogram
 
